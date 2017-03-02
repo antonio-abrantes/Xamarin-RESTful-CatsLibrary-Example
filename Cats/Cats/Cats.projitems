@@ -17,6 +17,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\Cat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Repository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AzureServices.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CatsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\CatsPage.xaml.cs">
       <DependentUpon>CatsPage.xaml</DependentUpon>

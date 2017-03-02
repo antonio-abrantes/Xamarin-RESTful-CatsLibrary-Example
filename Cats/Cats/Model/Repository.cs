@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,6 +18,17 @@ namespace Cats.Model
                 Cats = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Cat>>(JSON);
             }
             return Cats;
-        }
+        }
+
+        public async Task<List<Cat>> GetCatsAzure()
+        {
+            //Instancia serviço do azure
+            var AzureServices = new Services.AzureServices<Cat>();
+            //Espera pegar os valores de tabelas
+            var AzureItems = await AzureServices.GetTable();
+            //retorna os valores de tabela como List<T>
+            return AzureItems.ToList();
+        }
+
     }
 }
