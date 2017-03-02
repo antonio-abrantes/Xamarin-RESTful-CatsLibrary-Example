@@ -63,7 +63,7 @@ namespace Cats.ViewModels
                     IsBusy = true;
                     // cria instancia do repositório e inicia a tarefa assincrona
                     var Repository = new Repository();
-                    var Items = await Repository.GetCats();
+                    var Items = await Repository.GetCatsAzure();
                     //Limpa lista de e adiciona valores atualizados
                     Cats.Clear();
                     foreach (var Cat in Items)
